@@ -18,28 +18,49 @@ button:hover { background-color:#555; }
 .services, .portfolio { display: flex; flex-wrap: wrap; gap: 20px; }
 .service-card, .portfolio-item { background-color:#111; padding:20px; flex:1; min-width:250px; border:1px solid #444; border-radius:8px; }
 img { max-width: 100%; border-radius:8px; }
+
+/* Effets pour portfolio */
+.portfolio-item img { transition: transform 0.3s; }
+.portfolio-item img:hover { transform: scale(1.05); }
+
+/* Navigation hover */
+nav a:hover { color: #ff9800; }
+
+/* Formulaire bouton amélioré */
+button { background-color: #ff9800; color: #000; font-weight: bold; transition: background 0.3s; }
+button:hover { background-color: #e68a00; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services, .portfolio { flex-direction: column; }
+}
 </style>
 </head>
 <body>
 
+<!-- Header généré par JavaScript -->
+<div id="header-container"></div>
 
-<header>
-<h1>Societe Pro Z</h1>
-<p>Entreprise générale du batiment</p>
-<nav>
-<a href="#about">À propos</a>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
+<script>
+  const headerHTML = `
+    <header>
+      <h1>Societe Pro Z</h1>
+      <p>Entreprise générale du batiment</p>
+      <nav>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+  `;
+  document.getElementById('header-container').innerHTML = headerHTML;
+</script>
 
 <section id="about">
 <h2>À propos</h2>
 <p>Societe Pro Z est une entreprise générale du bâtiment basée à Frépillon. Nous intervenons sur tous types de travaux de construction et rénovation, avec un engagement pour la qualité et le respect des délais.</p>
 </section>
-
 
 <section id="services">
 <h2>Services</h2>
@@ -50,7 +71,6 @@ img { max-width: 100%; border-radius:8px; }
 </div>
 </section>
 
-
 <section id="portfolio">
 <h2>Portfolio</h2>
 <div class="portfolio">
@@ -59,7 +79,6 @@ img { max-width: 100%; border-radius:8px; }
 <div class="portfolio-item"><img src="https://picsum.photos/400/300?random=3" alt="Projet 3"><p>Projet 3</p></div>
 </div>
 </section>
-
 
 <section id="contact">
 <h2>Contact</h2>
@@ -79,11 +98,9 @@ img { max-width: 100%; border-radius:8px; }
 </form>
 </section>
 
-
 <footer>
 <p>© 2025 Societe Pro Z — Tous droits réservés</p>
 </footer>
-
 
 </body>
 </html>
